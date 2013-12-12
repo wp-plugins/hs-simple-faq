@@ -16,8 +16,8 @@ Numerous CMS website require a segment for FAQ’s. HS Responsive Category FAQ P
 HS Responsive Category FAQ Plugin appends a FAQ page in your website with jQuery accordian like effect using CSS3, and does not require jQuery. Thus, loading is faster as compared to similar other plugins. You can also add your own custom CSS from backend to change the front view of the HS Responsive Category FAQ Plugin.
 
 HS Responsive Category FAQ Plugin lets you to reduce the user queries by its elegant-design.  
-We are the dedicated group of WordPress authors focused on developing finest WordPress themes and plugins. 
 
+We are the dedicated group of WordPress authors focused on developing finest WordPress themes and plugins. 
 To know more about our work and projects, visit: <http://www.heliossolutions.in>
 
 
