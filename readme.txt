@@ -11,28 +11,15 @@ Simple and responsive faq plugin.
 
 == Description ==
 
-HS simple and responsive faq plugin is the simplest wordpress faq plugin. The plugin uses jquery accordian like effect using CSS3, 
-it does not require jQuery. So it loads faster. As it uses CSS3.
-You can also add your own custom css from backend to change the front view of the plugin.
+Numerous CMS website require a segment for FAQ’s. HS Responsive Category FAQ Plugin permits you to include, inspect and show FAQ on your website.
 
-To display all FAQs on a page. Create a page and add Following Shortcode to your page.
+HS Responsive Category FAQ Plugin appends a FAQ page in your website with jQuery accordian like effect using CSS3, and does not require jQuery. Thus, loading is faster as compared to similar other plugins. You can also add your own custom CSS from backend to change the front view of the HS Responsive Category FAQ Plugin.
 
-[hs-faq limit="-1"]
+HS Responsive Category FAQ Plugin lets you to reduce the user queries by its elegant-design.  
+We are the dedicated group of WordPress authors focused on developing finest WordPress themes and plugins. 
 
-Where limit specifies the number of posts to display. -1 will display all the posts.
-So if you want to display only 5 FAQs. Then use following shortcode.
+To know more about our work and projects, visit: [Our site](http://heliossolutions.in/ “heliossolutions”)
 
-[hs-faq limit="5"]
-
-To display  FAQs of a specific category on a page. Add Following Shortcode to your page.
-
-[hs-faq-cat id="14"]
-
-Where 14 is the category ID.
-
-You can also use the shortcode outside the post editor on a custom template.
-
-echo do_shortcode('[hs-faq limit="-1"]');
 
 = Features =
 
@@ -41,6 +28,9 @@ echo do_shortcode('[hs-faq limit="-1"]');
 - Accordian Effect using CSS3.
 - Responsive Faq.
 - Add Your own custom css.
+
+= Problems and Support =
+To get faster response You can drop a mail in our website Contact Page. If you have any query about WP Awesome FAQ Plugin then please check our F.A.Q.
 
 
 == Installation ==
@@ -51,9 +41,50 @@ plugins -> Activate HS Simple Faq" menu in WordPress.
 3. Find HS Simple Faq Plugin in -> Admin Menu.
 4. For settings "FAQ's" -> "Settings".
 
+= How to use? =
+To display all FAQs on a page. Create a page and add Following Shortcode to your page.
+
+`[hs-faq limit="-1"]`
+
+Where limit specifies the number of posts to display. -1 will display all the posts.
+So if you want to display only 5 FAQs. Then use following shortcode.
+
+`[hs-faq limit="5"]`
+
+To display  FAQs of a specific category on a page. Add Following Shortcode to your page.
+
+`[hs-faq-cat id="14"]`
+
+Where 14 is the category ID.
+
+You can also use the shortcode outside the post editor on a custom template.
+
+`echo do_shortcode('[hs-faq limit="-1"]');`
+
 
 == Frequently Asked Questions ==
- =no questions =
+= How to use? =
+To display all FAQs on a page. Create a page and add Following Shortcode to your page.
+
+`[hs-faq limit="-1"]`
+
+Where limit specifies the number of posts to display. -1 will display all the posts.
+So if you want to display only 5 FAQs. Then use following shortcode.
+
+`[hs-faq limit="5"]`
+
+To display  FAQs of a specific category on a page. Add Following Shortcode to your page.
+
+`[hs-faq-cat id="14"]`
+
+Where 14 is the category ID.
+
+You can also use the shortcode outside the post editor on a custom template.
+
+`echo do_shortcode('[hs-faq limit="-1"]');`
+
+
+
 
 == Screenshots ==
 
