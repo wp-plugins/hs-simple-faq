@@ -1,4 +1,4 @@
-=== HS Responsive category faq ===
+=== HS Responsive category FAQ ===
 Contributors: heliossolutions
 Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question, category, shortcode ,custom CSS Add, Ask, questions, answers, category faq, wordpress faq , responsive faq,responsive faq plugin, jquery accordian faq , css3 accordian faq
 Requires at least: 3.0
