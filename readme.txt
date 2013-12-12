@@ -18,7 +18,7 @@ HS Responsive Category FAQ Plugin appends a FAQ page in your website with jQuery
 HS Responsive Category FAQ Plugin lets you to reduce the user queries by its elegant-design.  
 We are the dedicated group of WordPress authors focused on developing finest WordPress themes and plugins. 
 
-To know more about our work and projects, visit: [Our site](http://heliossolutions.in/ “heliossolutions”)
+To know more about our work and projects, visit: <http://www.heliossolutions.in>
 
 
 = Features =
