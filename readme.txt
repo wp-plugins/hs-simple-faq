@@ -29,9 +29,6 @@ To know more about our work and projects, visit: <http://www.heliossolutions.in>
 - Responsive Faq.
 - Add Your own custom css.
 
-= Problems and Support =
-To get faster response You can drop a mail in our website Contact Page. If you have any query about WP Awesome FAQ Plugin then please check our F.A.Q.
-
 
 == Installation ==
 
