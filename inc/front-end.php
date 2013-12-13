@@ -9,7 +9,7 @@
     $count = count($terms);
     if ($count > 0) {
         foreach ($terms as $term) {
-            echo '<section id="tabs-' . $i . '"><h2 class="hs-faq-category"><a href="#tabs-' . $i . '">' . $term->name . '</a></h2>';
+            echo '<section id="tabs-' . $i . '"><div class="hs-faq-category"><a href="#tabs-' . $i . '">' . $term->name . '</a></div>';
 
             $query = new WP_Query(array(
                         'post_type' => $post_type,
@@ -20,6 +20,7 @@
                         'tax_query' => array(
                                             array(
                                                 'taxonomy' => 'hs_faq_taxomomy',
+                                                'field' => 'slug',
                                                 'terms' => $term
                                             )
                                         )
@@ -28,9 +29,9 @@
 
             while ($query->have_posts()) : $query->the_post();
             ?>
-            <h2 class="hs-faq-question">
+            <div class="hs-faq-question">
                 <?php the_title(); ?>
-            </h2> 
+            </div> 
     
             <div class="hs-faq-answer">
                 <?php the_content(); ?>

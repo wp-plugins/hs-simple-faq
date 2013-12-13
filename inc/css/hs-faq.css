@@ -3,12 +3,12 @@
 
 /*General Accordion****************************************************************************/
 /*Set style of open slide*/
-.hs_accordion section:target { background:#FFF; padding:10px;}
+.hs_accordion section:target { background:#FFF; padding:0px;}
 .hs_accordion section:target:hover { background:#FFF; }
 .hs_accordion section:target h2 {width:100%;}
 .hs_accordion section:target h2 a{ color:#333; padding:0;}
 .hs_accordion section:target p {display:block;}
-.hs_accordion section h2 a{padding:2px 5px;display:block; font-weight:normal;color:#eee; text-decoration:none; }
+.hs_accordion section div a{padding:20px 5px;display:block; font-weight:normal;color:#BDBDBD; text-decoration:none; font-size: 16px;}
 
 /*set style of closed slide*/
 .hs_accordion section{ float:left;overflow:hidden; color:#ccc; cursor:pointer; background: #333; margin:3px; }
@@ -30,13 +30,13 @@
 /*Set height of the slide*/
 .hs_vertical :target{ height:auto; width:99%; }
 
-.hs_vertical section h2 { position:relative; left:0; top:-15px; }
+.hs_vertical section div { position:relative; left:0; top:-15px; }
 
 /*Set position of the number on the slide*/
 .hs_vertical section:after{ /*top:-60px;*/left:810px;}
 .hs_vertical section:target:after{ left:-9999px;}
 
-h2.hs-faq-question{
+div.hs-faq-question{
 	color:#000000;
 	font-size:20px;
 	border-bottom:1px solid;
@@ -48,11 +48,11 @@ h2.hs-faq-question{
 	margin:0px 20px;
 	text-align:justify;
 }
-h2.hs-faq-category a{
+h3.hs-faq-category a{
 	font-size:20px ;
 }
 h3.hs-faq-question{
 	background-color: #CCCCB3;
-    border-radius: 5px;
+        border-radius: 5px;
 	padding: 5px;
 }

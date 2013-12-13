@@ -4,8 +4,8 @@ Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question,
 Requires at least: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
-Tested up to: 3.7.2
-Stable tag: 1.0
+Tested up to: 3.8
+Stable tag: 2.0.1
 
 Simple and responsive faq plugin.
 
@@ -93,9 +93,18 @@ You can also use the shortcode outside the post editor on a custom template.
 
 == Changelog ==
 
+= 2.0.1 =
+* Bug Fix: Changed confliting css/html with wordpress twentyfourteen theme
+* Enhancement: Updated the taxonomy query for proper display of all FAQs
+* Added support wordpress 3.8 and twentyforteen theme
+
 = 1.0 =
- *Initial launch of the plugin
+* Initial launch of the plugin
 
 == Upgrade Notice ==
- = 1.0 =
+
+= 2.0.1 =
+* Fully compatible with wordpress 3.8 and small bug fixes.
+
+= 1.0 =
   This is the first version of the plugin.
