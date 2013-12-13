@@ -1,6 +1,6 @@
 === HS Responsive category FAQ ===
 Contributors: heliossolutions
-Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question, category, shortcode ,custom CSS Add, Ask, questions, answers, category faq, wordpress faq , responsive faq,responsive faq plugin, jquery accordian faq , css3 accordian faq
+Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question, category, shortcode ,custom CSS Add, Ask, questions, answers, category faq, wordpress faq , responsive faq,responsive faq plugin, jquery accordian FAQ , css3 accordian faq
 Requires at least: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
@@ -26,7 +26,7 @@ To know more about our work and projects, visit: <http://www.heliossolutions.in>
 - Add multiple Category.
 - Shortcode for Individual Category.
 - Accordian Effect using CSS3.
-- Responsive Faq.
+- Responsive FAQ.
 - Add Your own custom css.
 
 
