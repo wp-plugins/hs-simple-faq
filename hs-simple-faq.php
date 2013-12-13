@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: HS Simplq FAQ
+ * Plugin Name: HS Responsive Category FAQ
  * Plugin URI: http://heliossolutions.in/
  * Description: Hs simple and responsive faq plugin is the simplest wordpress responsive faq plugin.
- * Version: 1.0
+ * Version: 2.0.1
  * Author: Helios Solutions
  * Author URI: http://heliossolutions.in/
  */
