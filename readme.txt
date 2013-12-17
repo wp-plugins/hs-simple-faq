@@ -107,4 +107,4 @@ You can also use the shortcode outside the post editor on a custom template.
 * Fully compatible with wordpress 3.8 and small bug fixes.
 
 = 1.0 =
-  This is the first version of the plugin.
+* This is the first version of the plugin.
