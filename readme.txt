@@ -89,7 +89,6 @@ You can also use the shortcode outside the post editor on a custom template.
 2. Add new FAQ Category
 3. Admin settings Page
 4. Front side view
-4. Front side view after click
 
 == Changelog ==
 
