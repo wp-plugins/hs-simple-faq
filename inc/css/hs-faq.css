@@ -1,58 +1,112 @@
-/*Define Accordion box*/
-.hs_accordion { width:100%; overflow:hidden; margin:10px auto; color:#474747; background:#414141; padding:10px; }
-
-/*General Accordion****************************************************************************/
-/*Set style of open slide*/
-.hs_accordion section:target { background:#FFF; padding:0px;}
-.hs_accordion section:target:hover { background:#FFF; }
-.hs_accordion section:target h2 {width:100%;}
-.hs_accordion section:target h2 a{ color:#333; padding:0;}
-.hs_accordion section:target p {display:block;}
-.hs_accordion section div a{padding:20px 5px;display:block; font-weight:normal;color:#BDBDBD; text-decoration:none; font-size: 16px;}
-
-/*set style of closed slide*/
-.hs_accordion section{ float:left;overflow:hidden; color:#ccc; cursor:pointer; background: #333; margin:3px; }
-.hs_accordion section:hover {background:#444;}
-.hs_accordion section p { display:none; }
-.hs_accordion section:after{position:relative;font-size:24px;color:#fff;font-weight:bold;}
-
-/*End General Accordion****************************************************************************/
-
-
-/*Vertical Accordion *************************************************************************/
-.hs_vertical section{ width:100%; height:40px;
-	-webkit-transition:height 0.2s ease-out;
-	-moz-transition:height 0.2s ease-out;
-  	-o-transition:height 0.2s ease-out;
-	-ms-transition:height 0.2s ease-out;
-  	transition:height 0.2s ease-out;
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-/*Set height of the slide*/
-.hs_vertical :target{ height:auto; width:99%; }
-
-.hs_vertical section div { position:relative; left:0; top:-15px; }
-
-/*Set position of the number on the slide*/
-.hs_vertical section:after{ /*top:-60px;*/left:810px;}
-.hs_vertical section:target:after{ left:-9999px;}
-
-div.hs-faq-question{
-	color:#000000;
-	font-size:20px;
-	border-bottom:1px solid;
-	margin:0px 5px;
+.hs-faq-container{
+	width: 100%;
+	text-align: left;
 }
-.hs-faq-answer{
-	color:#000000;
-	font-size:16px;
-	margin:0px 20px;
-	text-align:justify;
+.hs-faq-container label{
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	padding: 5px 20px;
+	position: relative;
+	z-index: 20;
+	display: block;
+	height: auto;
+	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 19px;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
+	background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		1px 0px 0px 0px rgba(255,255,255,0.9) inset, 
+		0px 2px 2px rgba(0,0,0,0.1);
 }
-h3.hs-faq-category a{
-	font-size:20px ;
+.hs-faq-container label:hover{
+	background: #fff;
 }
-h3.hs-faq-question{
-	background-color: #CCCCB3;
-        border-radius: 5px;
-	padding: 5px;
+.hs-faq-container input:checked + label,
+.hs-faq-container input:checked + label:hover{
+	background: #c6e1ec;
+	color: #3d7489;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+.hs-faq-container label:hover:after,
+.hs-faq-container input:checked + label:hover:after{
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: 13px;
+	top: 7px;
+	background: transparent url(../../images/arrow_down.png) no-repeat center center;	
+}
+.hs-faq-container input:checked + label:hover:after{
+	background-image: url(../../images/arrow_up.png);
+}
+.hs-faq-container input{
+	display: none;
+}
+.hs-faq-container article{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	max-height: 0px;
+	position: relative;
+	z-index: 10;
+	-webkit-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+        -moz-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+        -o-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+        -ms-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+        transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+}
+.hs-faq-container article p{
+	font-style: italic;
+	color: #777;
+	line-height: 23px;
+	font-size: 14px;
+	padding: 20px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+.hs-faq-container input:checked ~ article{
+    -webkit-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -moz-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -o-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -ms-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+}
+.hs-faq-container input:checked ~ article.ac-small{
+    max-height: 500px; /*auto*/
+}
+.hs-faq-qustion{
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px 20px 0;
+    font-size: 20px;
+}
+.fa-question:before {
+    content: "Q.";
+    font-family: Times New Roman;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 10px;
 }

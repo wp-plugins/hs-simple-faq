@@ -3,7 +3,7 @@
  * Plugin Name: HS Responsive Category FAQ
  * Plugin URI: http://heliossolutions.in/
  * Description: Hs simple and responsive faq plugin is the simplest wordpress responsive faq plugin.
- * Version: 2.0.1
+ * Version: 3.0.1
  * Author: Helios Solutions
  * Author URI: http://heliossolutions.in/
  */
@@ -174,20 +174,27 @@ function hs_faq_shortcode_cat($atts, $content = null) {
 
     //Get post type count
     $post_count = $query->post_count;
-    // Displays FAQ info
+    
     if ($post_count > 0) :
-
+    // Displays FAQ info
+    echo '<section class="hs-faq-container">';
     // Loop
     while ($query->have_posts()) : $query->the_post();
-?>           
-    <h3 class="hs-faq-question">
-        <?php the_title();?>
-    </h3>
-    <p id="hs-faq-answer-<?php echo get_the_ID(); ?>">
-        <?php echo get_the_content(); ?>
-    </p>
-<?php        
+    
+    $i = get_the_ID();
+    
+    echo '<div>';
+    $title = get_the_title();
+    echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" checked />';
+    echo '<label for="ac-' . $i . '"><i class="fa fa-question"></i>' . $title . '</label>';
+    echo '<article class="ac-small">';
+        the_content();   
+    echo '</article>'; 
+    
+    echo '</div>';
+    
     endwhile;
+    echo '</section>';
     endif;
 
     // Reset query to prevent conflicts

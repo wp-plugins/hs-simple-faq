@@ -1,16 +1,17 @@
-<!--[if lt IE 9]>
-	<?php wp_enqueue_script('jquery_html', plugins_url('hs-simple-faq/inc/js/hs-html5.js'), array('jquery'), '', false); ?>
-<![endif]-->
-<div class="hs_accordion hs_vertical">
-    
 <?php
     $i = 1;
+    //Get Terms
     $terms = get_terms("hs_faq_taxomomy");
     $count = count($terms);
-    if ($count > 0) {
+    if ($count > 0) { 
+	
+	echo '<section class="hs-faq-container">';
         foreach ($terms as $term) {
-            echo '<section id="tabs-' . $i . '"><div class="hs-faq-category"><a href="#tabs-' . $i . '">' . $term->name . '</a></div>';
-
+            
+            echo '<div>';
+            echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" checked />';
+            echo '<label for="ac-' . $i . '">' . $term->name . '</label>';
+            // QUERY ARGS
             $query = new WP_Query(array(
                         'post_type' => $post_type,
                         'posts_per_page' => $posts_per_page,
@@ -28,22 +29,52 @@
             );
 
             while ($query->have_posts()) : $query->the_post();
+            
+            $title = get_the_title();
+            
+            echo '<article class="ac-small">';
+            echo  '<div class="hs-faq-qustion">' . $title . '</div>';
+                the_content();   
+            echo '</article>'; 
             ?>
-            <div class="hs-faq-question">
-                <?php the_title(); ?>
-            </div> 
-    
-            <div class="hs-faq-answer">
-                <?php the_content(); ?>
-            </div>
     
             <?php
                 endwhile;
-                echo '</section>';
+                echo '</div>';
+                
             $i++;
         }
+        echo '</section>';
+    }
+	
+    //If Admin Has Not Created or Selected Any Category in Backend
+    else { 
+            $query = new WP_Query(array(
+                'post_type' => $post_type,
+                'posts_per_page' => $posts_per_page,
+                'orderby' => $orderby,
+                'order' => $order,
+                'no_found_rows' => 1
+                )
+            );
+            echo '<section class="hs-faq-container">';
+                // Loop
+                while ($query->have_posts()) : $query->the_post();
+
+                    $i = get_the_ID();
+
+                    echo '<div>';
+                    $title = get_the_title();
+                    echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" checked />';
+                    echo '<label for="ac-' . $i . '"><i class="fa fa-question"></i>' . $title . '</label>';
+                    echo '<article class="ac-small">';
+                        the_content();   
+                    echo '</article>'; 
+
+                    echo '</div>';
+
+                    endwhile;
+                    echo '</section>';
     }
     wp_reset_query();
 ?>
-    
-</div> <!-- .hs_accordion-->

@@ -1,11 +1,11 @@
-=== HS Responsive category FAQ ===
+﻿=== HS Responsive category FAQ ===
 Contributors: heliossolutions
-Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question, category, shortcode ,custom CSS Add, Ask, questions, answers, category faq, wordpress faq , responsive faq,responsive faq plugin, jquery accordian FAQ , css3 accordian faq
+Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question, category, shortcode ,custom CSS Add, Ask, questions, answers, category faq, wordpress faq , responsive faq,responsive faq plugin, jquery accordian faq , css3 accordian faq
 Requires at least: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 Tested up to: 3.8
-Stable tag: 2.0.1
+Stable tag: 3.0.1
 
 Simple and responsive faq plugin.
 
@@ -26,7 +26,7 @@ To know more about our work and projects, visit: <http://www.heliossolutions.in>
 - Add multiple Category.
 - Shortcode for Individual Category.
 - Accordian Effect using CSS3.
-- Responsive FAQ.
+- Responsive Faq.
 - Add Your own custom css.
 
 
@@ -93,6 +93,10 @@ You can also use the shortcode outside the post editor on a custom template.
 
 == Changelog ==
 
+= 3.0.1 =
+* Enhancement: New Design
+* Now you can display FAQ without assigning category.
+
 = 2.0.1 =
 * Bug Fix: Changed confliting css/html with wordpress twentyfourteen theme
 * Enhancement: Updated the taxonomy query for proper display of all FAQs
@@ -103,8 +107,11 @@ You can also use the shortcode outside the post editor on a custom template.
 
 == Upgrade Notice ==
 
+= 3.0.1 =
+* New Design introduce.
+
 = 2.0.1 =
 * Fully compatible with wordpress 3.8 and small bug fixes.
 
 = 1.0 =
-* This is the first version of the plugin.
+  This is the first version of the plugin.
