@@ -3,7 +3,7 @@
  * Plugin Name: HS Responsive Category FAQ
  * Plugin URI: http://heliossolutions.in/
  * Description: Hs simple and responsive faq plugin is the simplest wordpress responsive faq plugin.
- * Version: 3.0.1
+ * Version: 3.0.2
  * Author: Helios Solutions
  * Author URI: http://heliossolutions.in/
  */
@@ -159,7 +159,7 @@ function hs_faq_shortcode_cat($atts, $content = null) {
 
     $query = new WP_Query(array(
                 'post_type' => $post_type,
-                'posts_per_page' => $posts_per_page,
+                'posts_per_page' => -1,
                 'orderby' => $orderby,
                 'order' => $order,
                 'no_found_rows' => 1,
