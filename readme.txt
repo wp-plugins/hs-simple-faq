@@ -5,7 +5,7 @@ Requires at least: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 Tested up to: 3.9
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 
 Simple and responsive faq plugin.
 
@@ -92,6 +92,11 @@ You can also use the shortcode outside the post editor on a custom template.
 
 == Changelog ==
 
+= 3.0.3 =
+* Enhancement: Proper Mobile View.
+* All Accordions will be colsed initially.
+* Bug Fix : Missing Font Family.
+
 = 3.0.2 =
 * Enhancement: Wp Query Change
 * Updated the wp query for proper display of all FAQs category wise
@@ -109,6 +114,9 @@ You can also use the shortcode outside the post editor on a custom template.
 * Initial launch of the plugin
 
 == Upgrade Notice ==
+
+= 3.0.3 =
+* Proper mobile view and bug fix for font missing.
 
 = 3.0.2 =
 * Fully compatible with wordpress 3.9 and small bug fix.
