@@ -98,7 +98,7 @@ add_action('init', 'hs_faq_post_taxomomy', 0);
 /* Load CSS and Javascript for plugin */
 
 function hsfaq_frontend_scripts_and_styles() {
-    wp_enqueue_style('main-style', plugins_url('hs-simple-faq/inc/css/hs-faq_1.css'));
+    wp_enqueue_style('main-style', plugins_url('hs-simple-faq/inc/css/hs-faq.css'));
 }
 
 add_action('wp_enqueue_scripts', 'hsfaq_frontend_scripts_and_styles');
