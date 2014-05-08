@@ -9,7 +9,7 @@
         foreach ($terms as $term) {
             
             echo '<div>';
-            echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" checked />';
+            echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" />';
             echo '<label for="ac-' . $i . '">' . $term->name . '</label>';
             // QUERY ARGS
             $query = new WP_Query(array(
@@ -65,7 +65,7 @@
 
                     echo '<div>';
                     $title = get_the_title();
-                    echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" checked />';
+                    echo '<input id="ac-' . $i . '" name="accordion-1" type="radio" />';
                     echo '<label for="ac-' . $i . '"><i class="fa fa-question"></i>' . $title . '</label>';
                     echo '<article class="ac-small">';
                         the_content();   
