@@ -4,8 +4,8 @@ Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question,
 Requires at least: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
-Tested up to: 3.9
-Stable tag: 3.0.3
+Tested up to: 3.9.1
+Stable tag: 3.0.4
 
 Simple and responsive faq plugin.
 
@@ -92,6 +92,9 @@ You can also use the shortcode outside the post editor on a custom template.
 
 == Changelog ==
 
+= 3.0.4 =
+* Bug Fix : Changed Conflicting class name with font-awesome icons and other small css changes.
+
 = 3.0.3 =
 * Enhancement: Proper Mobile View.
 * All Accordions will be colsed initially.
@@ -114,6 +117,9 @@ You can also use the shortcode outside the post editor on a custom template.
 * Initial launch of the plugin
 
 == Upgrade Notice ==
+
+= 3.0.4 =
+* Bug fix for conflicting class name with font-awesome icons
 
 = 3.0.3 =
 * Proper mobile view and bug fix for font missing.
