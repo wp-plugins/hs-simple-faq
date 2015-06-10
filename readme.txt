@@ -1,11 +1,11 @@
 ﻿=== Helios Solutions Responsive category FAQ ===
 Contributors: heliossolutions
 Tags: best FAQ plugin,free FAQ plugin, wordpress FAQ, frequently asked question, category, shortcode ,custom CSS Add, Ask, questions, answers, category faq, wordpress faq , responsive faq,responsive faq plugin, jquery accordian faq , css3 accordian faq
-Requires at least: 3.0
+Requires at least: 3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
-Tested up to: 3.9.1
-Stable tag: 3.0.4
+Tested up to: 4.2.2
+Stable tag: 4.0.0
 
 Simple and responsive faq plugin.
 
@@ -13,7 +13,7 @@ Simple and responsive faq plugin.
 
 Numerous CMS website require a segment for FAQ’s. Helios Solutions Responsive Category FAQ Plugin permits you to include, inspect and show FAQ on your website.
 
-Helios Solutions Responsive Category FAQ Plugin appends a FAQ page in your website with jQuery accordian like effect using CSS3, and does not require jQuery. Thus, loading is faster as compared to similar other plugins. You can also add your own custom CSS from backend to change the front view of the Helios Solutions Responsive Category FAQ Plugin.
+Helios Solutions Responsive Category FAQ Plugin appends a FAQ page in your website with jQuery accordian effect using jQuery UI. You can also add your own custom CSS from backend to change the front view of the Helios Solutions Responsive Category FAQ Plugin.
 
 Helios Solutions Responsive Category FAQ Plugin lets you to reduce the user queries by its elegant-design.  
 
@@ -25,7 +25,7 @@ To know more about our work and projects, visit: <http://www.heliossolutions.in>
 
 - Add multiple Category.
 - Shortcode for Individual Category.
-- Accordian Effect using CSS3.
+- Accordian Effect using jQuery UI.
 - Responsive Faq.
 - Add Your own custom css.
 
@@ -47,6 +47,10 @@ Where limit specifies the number of posts to display. -1 will display all the po
 So if you want to display only 5 FAQs. Then use following shortcode.
 
 `[hs-faq limit="5"]`
+
+If you want to custom order your faqs. Then you can use order and orderby parameter in shortcode. Use following shortcode
+
+'[hs-faq limit="5" orderby="date" order="ASC"]'
 
 To display  FAQs of a specific category on a page. Add Following Shortcode to your page.
 
@@ -76,6 +80,10 @@ To display  FAQs of a specific category on a page. Add Following Shortcode to yo
 
 Where 14 is the category ID.
 
+You can also use order and orderby parameter same as above
+
+`[hs-faq-cat id="14" orderby="date" order="ASC"]`
+
 You can also use the shortcode outside the post editor on a custom template.
 
 `echo do_shortcode('[hs-faq limit="-1"]');`
@@ -91,6 +99,10 @@ You can also use the shortcode outside the post editor on a custom template.
 4. Front side view
 
 == Changelog ==
+
+= 4.0.0 =
+* Enhancement: Instead of CSS new version uses jQuery UI.
+* Enhancement: New Design with plus minus icon.
 
 = 3.0.4 =
 * Bug Fix : Changed Conflicting class name with font-awesome icons and other small css changes.
@@ -117,6 +129,8 @@ You can also use the shortcode outside the post editor on a custom template.
 * Initial launch of the plugin
 
 == Upgrade Notice ==
+= 4.0.0 =
+* This version of plugin uses jQuery UI instead of CSS accordions.
 
 = 3.0.4 =
 * Bug fix for conflicting class name with font-awesome icons

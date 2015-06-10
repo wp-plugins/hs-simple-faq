@@ -3,7 +3,7 @@
  * Plugin Name: HS Responsive Category FAQ
  * Plugin URI: http://heliossolutions.in/
  * Description: Hs simple and responsive faq plugin is the simplest wordpress responsive faq plugin.
- * Version: 3.0.4
+ * Version: 4.0.0
  * Author: Helios Solutions
  * Author URI: http://heliossolutions.in/
  */
@@ -33,6 +33,16 @@ function hsfaq_settings() {
     add_submenu_page( 'edit.php?post_type=hs_faq', __( 'HS FAQ Settings', 'hsfaq' ), __( 'Settings', 'hsfaq' ), 'manage_options', 'hsfaq-settings', 'hsfaq_settings_page' );
 }
 
+/* Add settings link on plugin page */
+function hsfaq_plugin_settings_link($links) { 
+  $settings_link = '<a href="edit.php?post_type=hs_faq&page=hsfaq-settings">Settings</a>'; 
+  array_unshift($links, $settings_link); 
+  return $links; 
+}
+$plugin = plugin_basename(__FILE__); 
+
+add_filter("plugin_action_links_$plugin", 'hsfaq_plugin_settings_link' );
+
 /*
  * Register Custom Post Type - HS Simple FAQ
  *
@@ -40,27 +50,27 @@ function hsfaq_settings() {
 
 function hs_faq_post_type() {
     $labels = array(
-        'name' => _x('FAQ\'s', 'post type general name'),
-        'singular_name' => _x('FAQ', 'post type singular name'),
-        'add_new' => _x('Add New', 'faq'),
-        'add_new_item' => __('Add New FAQ'),
-        'edit_item' => __('Edit FAQ'),
-        'new_item' => __('New FAQ'),
-        'all_items' => __('All FAQ\'s'),
-        'view_item' => __('View FAQ'),
-        'search_items' => __('Search FAQ'),
-        'not_found' => __('No FAQ\'s found'),
+        'name'               => _x('FAQ\'s', 'post type general name'),
+        'singular_name'      => _x('FAQ', 'post type singular name'),
+        'add_new'            => _x('Add New', 'faq'),
+        'add_new_item'       => __('Add New FAQ'),
+        'edit_item'          => __('Edit FAQ'),
+        'new_item'           => __('New FAQ'),
+        'all_items'          => __('All FAQ\'s'),
+        'view_item'          => __('View FAQ'),
+        'search_items'       => __('Search FAQ'),
+        'not_found'          => __('No FAQ\'s found'),
         'not_found_in_trash' => __('No FAQ\'s found in the Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'FAQ\'s'
+        'parent_item_colon'  => '',
+        'menu_name'          => 'FAQ\'s'
     );
     $args = array(
-        'labels' => $labels,
-        'description' => 'Holds our faq\'s and faq specific data',
-        'public' => true,
+        'labels'        => $labels,
+        'description'   => 'Holds our faq\'s and faq specific data',
+        'public'        => true,
         'menu_position' => 5,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
-        'has_archive' => true,
+        'supports'      => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+        'has_archive'   => true,
     );
     register_post_type('hs_faq', $args);
 }
@@ -74,17 +84,17 @@ add_action('init', 'hs_faq_post_type');
 
 function hs_faq_post_taxomomy() {
     $labels = array(
-        'name' => _x('FAQ Categories', 'taxonomy general name'),
-        'singular_name' => _x('FAQ Category', 'taxonomy singular name'),
-        'search_items' => __('Search FAQ Categories'),
-        'all_items' => __('All FAQ Categories'),
-        'parent_item' => __('Parent FAQ Category'),
+        'name'              => _x('FAQ Categories', 'taxonomy general name'),
+        'singular_name'     => _x('FAQ Category', 'taxonomy singular name'),
+        'search_items'      => __('Search FAQ Categories'),
+        'all_items'         => __('All FAQ Categories'),
+        'parent_item'       => __('Parent FAQ Category'),
         'parent_item_colon' => __('Parent FAQ Category:'),
-        'edit_item' => __('Edit FAQ Category'),
-        'update_item' => __('Update FAQ Category'),
-        'add_new_item' => __('Add New FAQ Category'),
-        'new_item_name' => __('New FAQ Category'),
-        'menu_name' => __('FAQ Categories'),
+        'edit_item'         => __('Edit FAQ Category'),
+        'update_item'       => __('Update FAQ Category'),
+        'add_new_item'      => __('Add New FAQ Category'),
+        'new_item_name'     => __('New FAQ Category'),
+        'menu_name'         => __('FAQ Categories'),
     );
     $args = array(
         'labels' => $labels,
@@ -98,7 +108,12 @@ add_action('init', 'hs_faq_post_taxomomy', 0);
 /* Load CSS and Javascript for plugin */
 
 function hsfaq_frontend_scripts_and_styles() {
-    wp_enqueue_style('main-style', plugins_url('hs-simple-faq/inc/css/hs-faq.css'));
+    wp_enqueue_style('main-style', plugins_url('hs-simple-faq/inc/css/hs-faq.css'));	
+    wp_enqueue_style('hsfaq-jqueryui', 'hs-simple-faq/inc/css/jquery-ui.css');	
+    wp_enqueue_script('hsfaq', plugins_url('hs-simple-faq/inc/js/jquery-1.10.2.js'), array('jquery'), '', false);
+    wp_enqueue_script('hsfaqmain', plugins_url('hs-simple-faq/inc/js/jquery-ui.js'), array('jquery'), '', false);
+    wp_enqueue_script('hsfaqcustom', plugins_url('hs-simple-faq/inc/js/custom-faq.js'), array('jquery'), '', false);
+    wp_enqueue_style('hsfaq_frontend_css', plugins_url('hs-simple-faq/inc/css/jquery-ui.css'));    
 }
 
 add_action('wp_enqueue_scripts', 'hsfaq_frontend_scripts_and_styles');
@@ -111,23 +126,36 @@ add_action('wp_enqueue_scripts', 'hsfaq_frontend_scripts_and_styles');
 function hs_faq_shortcode($atts, $content = null) {
 
     extract(shortcode_atts(array(
-                "limit" => ''
+                "limit"   => '',
+                "orderby" => '',
+                "order"   => ''
                     ), $atts));
 
     // Define limit
-    if ($limit) {
+    if ($limit):
         $posts_per_page = $limit;
-    } else {
+    else:
         $posts_per_page = '-1';
-    }
+    endif;
 
+    if ($orderby):
+        $orderby = $orderby;
+    else:
+        $orderby = 'post_date';
+    endif;
+    
+    if ($order):
+        $order = $order;
+    else:
+        $order = 'DESC';
+    endif;
+    
+    
     ob_start();
 
     // Create the Query
     $post_type = 'hs_faq';
-    $orderby = 'post_date';
-    $order = 'DESC';
-
+	
     //Load the frontend
     require( 'inc/front-end.php' );
 
@@ -143,32 +171,45 @@ add_shortcode("hs-faq", "hs_faq_shortcode");
 function hs_faq_shortcode_cat($atts, $content = null) {
 
     extract(shortcode_atts(array(
-                "id" => ''
+                "id"      => '',
+                "orderby" => '',
+                "order"   => ''
                     ), $atts));
 
     // get cat id
-    if ($id) {
+    if ($id) :
         $term_id = $id;
-    }
+    endif;
+    
+    if($orderby):
+            $orderby = $orderby;
+    else:
+            $orderby = 'post_date';
+    endif;
+
+    if ($order):
+        $order = $order;
+    else:
+        $order = 'DESC';
+    endif;
+        
     ob_start();
 
     // Create the Query
     $post_type = 'hs_faq';
-    $orderby = 'post_date';
-    $order = 'DESC';
 
     $query = new WP_Query(array(
-                'post_type' => $post_type,
+                'post_type'      => $post_type,
                 'posts_per_page' => -1,
-                'orderby' => $orderby,
-                'order' => $order,
-                'no_found_rows' => 1,
-                'tax_query' => array(
-                                    array(
-                                        'taxonomy' => 'hs_faq_taxomomy',
-                                        'terms' => $term_id
+                'orderby'        => $orderby,
+                'order'          => $order,
+                'no_found_rows'  => 1,
+                'tax_query'      => array(
+                                        array(
+                                            'taxonomy' => 'hs_faq_taxomomy',
+                                            'terms' => $term_id
+                                        )
                                     )
-                                )
                 )
     );
 
@@ -179,21 +220,19 @@ function hs_faq_shortcode_cat($atts, $content = null) {
     // Displays FAQ info
     echo '<section class="hs-faq-container">';
     // Loop
-    while ($query->have_posts()) : $query->the_post();
-    
-    $i = get_the_ID();
-    
-    echo '<div>';
-    $title = get_the_title();
-    echo '<input id="ac-' . $i . '" name="accordion-1" type="radio"  />';
-    echo '<label for="ac-' . $i . '"><i class="hs-question-icon"></i>' . $title . '</label>';
-    echo '<article class="ac-small">';
-        the_content();   
-    echo '</article>'; 
-    
-    echo '</div>';
-    
-    endwhile;
+	echo '<div class="hs-faq-accordion">';
+		while ($query->have_posts()) : $query->the_post();
+		
+		$i = get_the_ID();
+		
+		$title = get_the_title();
+		echo '<h3>' . $title . '</h3>';
+		echo '<div class="ac-small">';
+			the_content();   
+		echo '</div>'; 
+		
+		endwhile;
+	echo '</div>';
     echo '</section>';
     endif;
 
@@ -261,5 +300,4 @@ function hsfaq_settings_page() {
 <?php 
         endif;
         require( 'inc/hs-faq-option-page.php' );
- }
-?>
+}

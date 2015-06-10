@@ -25,12 +25,26 @@
                                                     
                                                     <code>[hs-faq limit="5"]</code>
                                                     
+                                                    <p><?php _e( 'If you want to custom order your faqs. Then you can use order and orderby parameter in shortcode. Use following shortcode', 'hsfaq' ); ?></p>
+                                                     <code>[hs-faq limit="5" orderby="date" order="ASC"]</code>
+                                                     
+                                                    <p><?php _e( 'Default values for order parameter are <b>ASC</b> and <b>DESC</b>', 'hsfaq' ); ?></p>
+                                                    <p><?php _e( 'Default values for orderby parameter are <b>ID</b>, <b>author</b>, <b>title</b>, <b>name</b>, <b>type</b>, <b>date</b>, <b>modified</b>, <b>parent</b>, <b>rand</b>, <b>menu_order</b>', 'hsfaq' ); ?></p>
+                                                    <p><?php _e( 'For more information visit following link', 'hsfaq' ); ?>
+                                                    <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters">
+                                                        <?php _e( 'Order and Orderby Parameters', 'hsfaq' ); ?>
+                                                    </a>
+                                                    </p>
+                                                    
                                                     <h2><?php _e( 'To display FAQs of a specific category.', 'hsfaq' ); ?></h2>
                                                     
                                                     <p><?php _e( 'To display  FAQs of a specific category on a page. Add Following Shortcode to your page.', 'hsfaq' ); ?></p>
                                                     <code>[hs-faq-cat id="14"]</code>
                                                     <p><?php _e( 'Where 14 is the category ID.', 'hsfaq' ); ?></p>
                                                     
+                                                    <p><?php _e( 'You can also use order and orderby parameter same as above', 'hsfaq' ); ?></p>
+                                                     <code>[hs-faq-cat id="14" orderby="date" order="ASC"]</code>
+                                                     
                                                     <h2><?php _e( 'Use shortcode in a PHP file, outside the post editor.', 'hsfaq' ); ?></h2>
                                                     <p><?php _e( 'You can also use the shortcode outside the post editor on a custom template.', 'hsfaq' ); ?></p>
                                                     <p> <code>echo do_shortcode('[hs-faq limit="-1"]'); </code></p>
