@@ -50,7 +50,7 @@ So if you want to display only 5 FAQs. Then use following shortcode.
 
 If you want to custom order your faqs. Then you can use order and orderby parameter in shortcode. Use following shortcode
 
-'[hs-faq limit="5" orderby="date" order="ASC"]'
+`[hs-faq limit="5" orderby="date" order="ASC"]`
 
 To display  FAQs of a specific category on a page. Add Following Shortcode to your page.
 
@@ -73,6 +73,10 @@ Where limit specifies the number of posts to display. -1 will display all the po
 So if you want to display only 5 FAQs. Then use following shortcode.
 
 `[hs-faq limit="5"]`
+
+If you want to custom order your faqs. Then you can use order and orderby parameter in shortcode. Use following shortcode
+
+`[hs-faq limit="5" orderby="date" order="ASC"]`
 
 To display  FAQs of a specific category on a page. Add Following Shortcode to your page.
 
